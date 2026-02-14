@@ -115,6 +115,95 @@ There is a significant volume imbalance between:
 To ensure model effectiveness and avoid bias toward the majority class, data balancing techniques are applied, including controlled sampling to produce a more evenly distributed training dataset.
 
 ---
+## 5. Functional Description
+
+This section describes the main functional modules and directory structure of the project repository.
+
+---
+
+### 5.1 `Dataset/CICIoT2023`
+
+This directory contains the **fully processed and balanced dataset** used for training and evaluation.
+
+Key characteristics:
+
+* Merged from the original 169 raw files
+* Irrelevant attack categories removed
+* Retains only:
+
+  * Benign Traffic
+  * Slow DDoS Traffic
+* Class imbalance has been addressed through data balancing techniques
+
+This dataset is ready for direct use in model training and testing without additional preprocessing.
+
+---
+
+### 5.2 `Data Preprocessing`
+
+This module includes all scripts related to dataset preparation.
+
+Main functions:
+
+* Raw dataset merging
+* Traffic filtering (Slow DDoS extraction)
+* Removal of redundant or invalid records
+* Feature cleaning and normalization
+* Dataset balancing
+
+These scripts reproduce the full preprocessing pipeline from the original CICIoT2023 dataset to the finalized training dataset.
+
+---
+
+### 5.3 `models`
+
+This directory stores the machine learning and deep learning models developed for Slow DDoS detection.
+
+Contents may include:
+
+* Model architecture definitions
+* Training scripts
+* Evaluation scripts
+* Exported model weights
+* Lightweight model variants for embedded deployment
+
+These models are optimized for inference on resource-constrained IoT hardware.
+
+---
+
+### 5.4 `data_visualisation_image`
+
+This folder contains data visualization outputs generated during exploratory data analysis and preprocessing validation.
+
+Typical visualizations include:
+
+* Traffic distribution plots
+* Class balance comparisons
+* Feature correlation heatmaps
+* Attack vs. benign feature patterns
+
+These visual assets support dataset understanding and model design decisions.
+
+---
+
+### 5.5 `send_csv_to_*`
+
+Due to the **performance and storage limitations of the Raspberry Pi Pico**, the full dataset cannot be stored locally on the device.
+
+Therefore, this module provides scripts that:
+
+* Read CSV samples from the PC
+* Transmit data batches to the hardware device
+* Enable real-time inference testing on the Pico
+* Receive prediction results back to the host system
+
+This mechanism allows large-scale testing while keeping the embedded device lightweight and memory-efficient.
+
+---
+
+
+
+
 
 
 
