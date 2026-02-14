@@ -175,15 +175,6 @@ These models are optimized for inference on resource-constrained IoT hardware.
 
 This folder contains data visualization outputs generated during exploratory data analysis and preprocessing validation.
 
-Typical visualizations include:
-
-* Traffic distribution plots
-* Class balance comparisons
-* Feature correlation heatmaps
-* Attack vs. benign feature patterns
-
-These visual assets support dataset understanding and model design decisions.
-
 ---
 
 ### 5.5 `send_csv_to_*`
