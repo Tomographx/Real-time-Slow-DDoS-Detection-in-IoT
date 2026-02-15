@@ -191,7 +191,28 @@ Therefore, this module provides scripts that:
 This mechanism allows large-scale testing while keeping the embedded device lightweight and memory-efficient.
 
 ---
+### 5.6 `Pi_Pico*`
 
+This directory contains all MicroPython firmware and deployment files designed specifically for the Raspberry Pi Pico 2W.
+
+It enables on-device inference and network communication required for real-time Slow DDoS detection.
+
+Main components include:
+
+* WiFi Configuration Script
+Handles wireless network setup and connection, allowing the Pico to communicate with external hosts (e.g., PC or Raspberry Pi).
+* Logistic Regression (LR) Model
+A lightweight statistical detection model optimized for ultra-low resource consumption and fast inference.
+* MLP Model
+A compact Multi-Layer Perceptron implementation adapted for MicroPython execution on constrained hardware.
+* MLP Weight Files
+Pretrained weight parameters exported from the training environment and converted into MicroPython-compatible format for on-device loading and inference.
+
+These components collectively enable the Pico to:
+
+* Receive feature data over WiFi
+* Execute real-time attack detection=
+* Return prediction results to the host system
 
 
 
