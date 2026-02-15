@@ -1,0 +1,2 @@
+SSID = "xxx"
+PASSWORD = "Rubdown"

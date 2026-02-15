@@ -1,2 +1,0 @@
-SSID = "xxx"
-PASSWORD = "Rubdown"
